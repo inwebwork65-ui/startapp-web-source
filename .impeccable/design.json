@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T00:00:00Z",
+  "title": "Design System: StartApp",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0A0A0A", "tonalRamp": ["#0A0A0A", "#111111", "#1A1A1A", "#2A2A2A", "#4A4A47", "#6B6B66", "#A8A8A3", "#E9E8E3"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F5F5F2", "tonalRamp": ["#4A4A47", "#6B6B66", "#85857F", "#A8A8A3", "#C9C8C3", "#E9E8E3", "#F0F0EC", "#F5F5F2"] },
+      "bone": { "role": "neutral", "displayName": "Bone", "canonical": "#E9E8E3", "tonalRamp": ["#6B6B66", "#85857F", "#A8A8A3", "#BEBDB8", "#D0CFCA", "#E9E8E3", "#F0F0EC", "#F5F5F2"] },
+      "accent": { "role": "primary", "displayName": "Signal Orange", "canonical": "#F2542D", "tonalRamp": ["#5C1A0B", "#7A2410", "#B8300F", "#D63F19", "#F2542D", "#F57C5C", "#F9A88F", "#FCD3C6"] },
+      "accent-ink": { "role": "primary", "displayName": "Burnt Orange", "canonical": "#B8300F", "tonalRamp": ["#3D1006", "#5C1A0B", "#7A2410", "#B8300F", "#D63F19", "#F2542D", "#F57C5C", "#F9A88F"] },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#4A4A47", "tonalRamp": ["#1A1A1A", "#2A2A29", "#3A3A38", "#4A4A47", "#6B6B66", "#85857F", "#A8A8A3", "#E9E8E3"] },
+      "ash": { "role": "neutral", "displayName": "Ash", "canonical": "#6B6B66", "tonalRamp": ["#1A1A1A", "#3A3A38", "#4A4A47", "#6B6B66", "#85857F", "#A8A8A3", "#C9C8C3", "#E9E8E3"] },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#A8A8A3", "tonalRamp": ["#2A2A29", "#4A4A47", "#6B6B66", "#85857F", "#A8A8A3", "#C9C8C3", "#E9E8E3", "#F5F5F2"] }
+    },
+    "typographyMeta": {
+      "hero": { "displayName": "Hero", "purpose": "The three-line h1; height-capped to fit the first viewport." },
+      "display": { "displayName": "Display", "purpose": "Section openers." },
+      "headline": { "displayName": "Headline", "purpose": "Case names, step names, contact heading." },
+      "title": { "displayName": "Title", "purpose": "Tab names, metric labels, mobile menu links." },
+      "lead": { "displayName": "Lead", "purpose": "Intro paragraphs and form input text." },
+      "body": { "displayName": "Body", "purpose": "Running text and definition lists." },
+      "meta": { "displayName": "Meta", "purpose": "Geist Mono data labels: counters, step numbers, legal line." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Single easing for all reveals and state transitions." },
+      { "name": "reveal", "value": "900ms, 40px rise, once at 20% in view", "purpose": "Fade and rise for blocks." },
+      { "name": "split-lines", "value": "1050ms, 100ms stagger, 108% to 0 in overflow mask", "purpose": "Headline line-by-line rise." },
+      { "name": "image-reveal", "value": "1300ms clip-path inset(100% 0 0 0) to inset(0)", "purpose": "Bottom-up image reveal with 14-30px parallax." },
+      { "name": "marquee", "value": "70s linear infinite, translate -50%", "purpose": "Orange terms band." },
+      { "name": "control-transition", "value": "300ms colour, 500ms arrow/underline", "purpose": "Button, link and nav states." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "480px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Accent Button",
+      "kind": "custom",
+      "refersTo": "button-accent",
+      "description": "Primary action; orange fill with ink text and travelling arrow.",
+      "html": "<a class=\"ds-btn-accent\" href=\"#\">Conocé nuestros proyectos <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-accent{display:inline-flex;align-items:center;gap:20px;height:56px;padding:0 28px;background:#F2542D;color:#0A0A0A;font-weight:500;text-decoration:none;border-radius:0;transition:background-color .3s cubic-bezier(.22,1,.36,1)}.ds-btn-accent svg{transition:transform .5s cubic-bezier(.22,1,.36,1)}.ds-btn-accent:hover{background:#F5F5F2}.ds-btn-accent:hover svg{transform:translateX(6px)}.ds-btn-accent:focus-visible{outline:2px solid #F2542D;outline-offset:3px}"
+    },
+    {
+      "name": "Outline Button (on ink)",
+      "kind": "custom",
+      "refersTo": "button-outline-light",
+      "description": "Secondary action on ink fields.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Hablemos</a>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;height:56px;padding:0 28px;border:1px solid rgba(245,245,242,.4);color:#F5F5F2;font-weight:500;text-decoration:none;border-radius:0;background:#0A0A0A;transition:all .3s cubic-bezier(.22,1,.36,1)}.ds-btn-outline:hover{background:#F5F5F2;color:#0A0A0A;border-color:#F5F5F2}.ds-btn-outline:focus-visible{outline:2px solid #F2542D;outline-offset:3px}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "description": "Inline text link with drawn underline.",
+      "html": "<a class=\"ds-arrowlink\" href=\"#\"><span>Ver proyecto</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-arrowlink{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-weight:500;color:#0A0A0A;text-decoration:none}.ds-arrowlink span{padding-bottom:4px;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1px no-repeat;transition:background-size .5s cubic-bezier(.22,1,.36,1)}.ds-arrowlink:hover span{background-size:100% 1px}.ds-arrowlink svg{transition:transform .5s cubic-bezier(.22,1,.36,1)}.ds-arrowlink:hover svg{transform:translateX(6px)}.ds-arrowlink:focus-visible{outline:2px solid #F2542D;outline-offset:3px}"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "description": "Solid ink header with mist links, orange active underline and orange CTA.",
+      "html": "<div class=\"ds-header\"><span class=\"ds-logo\">StartApp</span><nav><a class=\"on\" href=\"#\">Soluciones</a><a href=\"#\">Proyectos</a><a href=\"#\">Proceso</a></nav><a class=\"ds-cta\" href=\"#\">Hablemos</a></div>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;gap:24px;height:80px;padding:0 32px;background:#0A0A0A;border-bottom:1px solid rgba(245,245,242,.1);color:#F5F5F2}.ds-header nav{display:flex;gap:36px}.ds-header nav a{position:relative;display:flex;align-items:center;min-height:44px;font-size:15px;color:#A8A8A3;text-decoration:none;transition:color .3s}.ds-header nav a:hover,.ds-header nav a.on{color:#F5F5F2}.ds-header nav a.on::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:1px;background:#F2542D}.ds-cta{display:inline-flex;align-items:center;height:44px;padding:0 24px;background:#F2542D;color:#0A0A0A;font-size:15px;font-weight:500;text-decoration:none;transition:background-color .3s}.ds-cta:hover{background:#F5F5F2}.ds-cta:focus-visible,.ds-header nav a:focus-visible{outline:2px solid #F2542D;outline-offset:3px}"
+    },
+    {
+      "name": "Marquee Band",
+      "kind": "custom",
+      "description": "Orange terms band separated by ink squares.",
+      "html": "<div class=\"ds-marquee\"><span>Sistemas de gestión</span><i></i><span>Apps a medida</span><i></i><span>Soporte</span><i></i></div>",
+      "css": ".ds-marquee{display:flex;align-items:center;overflow:hidden;background:#F2542D;color:#0A0A0A;padding:20px 0}.ds-marquee span{white-space:nowrap;font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}.ds-marquee i{display:block;width:6px;height:6px;margin:0 48px;background:#0A0A0A}"
+    },
+    {
+      "name": "Ledger Metric Row",
+      "kind": "custom",
+      "description": "Oversized numeral beside label and description, divided by hairlines on ink.",
+      "html": "<div class=\"ds-ledger\"><p class=\"n\">200+</p><div><p class=\"t\">Clientes</p><p class=\"d\">Empresas que operan con sistemas desarrollados por StartApp.</p></div></div>",
+      "css": ".ds-ledger{display:grid;grid-template-columns:2fr 1fr;align-items:end;gap:24px;padding:48px 0;background:#0A0A0A;color:#F5F5F2;border-top:1px solid rgba(245,245,242,.2)}.ds-ledger .n{margin:0;font-size:clamp(4rem,10vw,9rem);font-weight:500;line-height:.86;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.ds-ledger .t{margin:0;font-size:2rem;letter-spacing:-.025em}.ds-ledger .d{margin:8px 0 0;font-size:17px;color:#A8A8A3;max-width:24rem}"
+    },
+    {
+      "name": "Service Tab",
+      "kind": "custom",
+      "description": "Vertical tab row with orange square marker on the selected item.",
+      "html": "<div class=\"ds-tabs\"><button class=\"sel\"><i></i><span>Sistemas de gestión</span></button><button><i></i><span>Aplicaciones a medida</span></button></div>",
+      "css": ".ds-tabs{background:#F5F5F2;color:#0A0A0A}.ds-tabs button{display:flex;align-items:center;gap:16px;width:100%;min-height:72px;padding:20px 0;border:0;border-top:1px solid rgba(10,10,10,.2);background:none;text-align:left;cursor:pointer;font:inherit}.ds-tabs i{display:block;width:0;height:10px;background:#F2542D;transition:width .5s cubic-bezier(.22,1,.36,1)}.ds-tabs span{font-size:2rem;letter-spacing:-.025em;color:#6B6B66;transition:color .3s}.ds-tabs button:hover span,.ds-tabs .sel span{color:#0A0A0A}.ds-tabs .sel i{width:10px}.ds-tabs button:focus-visible{outline:2px solid #F2542D;outline-offset:3px}"
+    },
+    {
+      "name": "Project Counter and Facts",
+      "kind": "card",
+      "description": "ProjectCase image tab with mono counter and definition list.",
+      "html": "<article class=\"ds-case\"><div class=\"img\"><span>01 / 04</span></div><dl><div><dt>Categoría</dt><dd>Gestión</dd></div><div><dt>Formato</dt><dd>Web y móvil</dd></div></dl></article>",
+      "css": ".ds-case{background:#F5F5F2;color:#0A0A0A;max-width:420px}.ds-case .img{position:relative;aspect-ratio:7/5;background:#E9E8E3}.ds-case .img span{position:absolute;left:0;top:0;padding:10px 16px;background:#0A0A0A;color:#F5F5F2;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;transition:all .5s}.ds-case:hover .img span{background:#F2542D;color:#0A0A0A}.ds-case dl{margin:32px 0 0;border-top:1px solid rgba(10,10,10,.2)}.ds-case dl div{display:flex;justify-content:space-between;gap:24px;padding:12px 0;border-bottom:1px solid rgba(10,10,10,.2)}.ds-case dt{color:#6B6B66}.ds-case dd{margin:0;text-align:right}"
+    },
+    {
+      "name": "Underline Input",
+      "kind": "input",
+      "refersTo": "input-underline",
+      "description": "Borderless field with 1px underline that thickens to 2px orange on focus.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-n\">Nombre <span>*</span></label><input id=\"ds-n\" type=\"text\" placeholder=\"Tu nombre\"></div>",
+      "css": ".ds-field{background:#F5F5F2;padding:16px}.ds-field label{display:block;margin-bottom:4px;font-size:15px;color:#4A4A47}.ds-field label span{color:#B8300F}.ds-field input{width:100%;height:56px;padding:0;border:0;border-bottom:1px solid rgba(10,10,10,.4);border-radius:0;background:transparent;color:#0A0A0A;font-size:1.25rem;caret-color:#F2542D;transition:border-color .3s}.ds-field input::placeholder{color:#6B6B66}.ds-field input:focus{outline:none;border-bottom:2px solid #F2542D}.ds-field input[aria-invalid=true]{border-bottom-color:#B8300F}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Printed Annual Report",
+    "overview": "A long editorial homepage where oversized Geist type and real photographs carry credibility. Fields alternate between near-black ink and warm paper, with a single committed orange (taken from the logo mark) for the marquee, the closing call band and every action. There are no shadows, no glass, no gradients and no rounded corners; structure comes from hairline rules, scale contrast and whitespace.\n\nThe system is Spanish-language, Argentine-register and sober: it argues that StartApp builds and keeps running real systems by showing the products and the numbers at very large size, not by decorating. Density is generous; sections run 6rem to 10rem of vertical padding and headlines are allowed to take most of the width.",
+    "keyCharacteristics": [
+      "Alternating ink and paper fields; orange is the only chroma.",
+      "Geist at weight 500 with tight negative tracking for display; Geist Mono only for data labels.",
+      "Square corners everywhere (0px), 1px hairline rules, no shadows.",
+      "Motion is reveal-driven: masked line rises, clip-path image reveals, scroll-drawn lines.",
+      "The logo exists only as a white wordmark, so header and footer are always on ink."
+    ],
+    "rules": [
+      { "name": "The One Orange Rule", "body": "Orange is a fill or a small mark, never body text on paper; on paper, orange text uses Burnt Orange. Orange fields carry ink text, never paper.", "section": "colors" },
+      { "name": "The Ink or Paper Rule", "body": "Every section is a full-bleed ink or paper field; no tints between, no gradients.", "section": "colors" },
+      { "name": "The Mono Is Data Rule", "body": "Geist Mono appears only for counters, step numbers, place/coordinates and legal lines, never for headings or prose.", "section": "typography" },
+      { "name": "The Balanced Headline Rule", "body": "h1 to h3 use text-wrap: balance at weight 500; paragraphs use text-wrap: pretty.", "section": "typography" },
+      { "name": "The Flat Rule", "body": "No shadows, blur or glass. Separate with a rule or a field change.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternate full-bleed ink and paper fields; keep orange for the marquee, call band, actions and small markers.",
+      "Do use Burnt Orange (#B8300F) for any orange text on paper.",
+      "Do set display type at weight 500 with -0.025 to -0.04em tracking and reveal it line by line.",
+      "Do separate content with 1px hairlines at 20% (paper on ink, ink on paper).",
+      "Do keep every corner square and every surface flat.",
+      "Do keep interactive targets at 44px minimum and honour reduced motion."
+    ],
+    "donts": [
+      "Don't use box-shadows, blur, glass or gradients; the only gradient is the 1px currentColor underline mechanism.",
+      "Don't put Signal Orange text on paper, or paper text on orange.",
+      "Don't use Geist Mono for headings or prose.",
+      "Don't place the logo on paper; only the white wordmark exists.",
+      "Don't fall back to a centered hero plus repeated card grids."
+    ]
+  }
+}

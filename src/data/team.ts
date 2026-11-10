@@ -76,5 +76,7 @@ export const TEAM: TeamMember[] = [
     tagline: 'Atención al cliente y desarrollo web.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Atención al cliente', 'Publicación de apps'],
     bio: 'Realiza tareas de administración en Wabbi y cursa la Tecnicatura en Programación e Innovación Tecnológica (INCADE).',
+    photo: '/images/equipo/paula-pedernera.webp',
+    zoom: 1.35,
   },
 ]

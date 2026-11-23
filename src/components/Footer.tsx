@@ -31,8 +31,8 @@ const COLUMNS = [
 ]
 
 const LEGAL = [
-  { label: 'Política de privacidad', href: '/politica-de-privacidad.html' },
-  { label: 'Términos de uso', href: '/terminos-de-uso.html' },
+  { label: 'Política de privacidad', href: 'https://startapp.ar/politica-de-privacidad.html' },
+  { label: 'Términos de uso', href: 'https://startapp.ar/terminos-de-uso.html' },
 ]
 
 export default function Footer() {
@@ -74,7 +74,7 @@ export default function Footer() {
           </nav>
         </Reveal>
 
-        <div className="mt-20 flex flex-col gap-3 border-t border-paper/20 pt-6 font-mono text-meta uppercase text-fog lg:flex-row lg:justify-between">
+        <div className="mt-20 flex flex-col gap-3 font-mono text-meta uppercase text-fog lg:flex-row lg:justify-between">
           <p>StartApp © {new Date().getFullYear()}</p>
           <p className="normal-case tracking-normal">
             Este sitio web es propiedad de y es administrado por {SITE.owner} ·{' '}

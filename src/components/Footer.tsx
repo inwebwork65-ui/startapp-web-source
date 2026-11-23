@@ -18,8 +18,6 @@ const COLUMNS = [
       { label: 'Descargas', href: SITE.downloads, external: true },
       { label: 'Nuestra historia', href: '/historia.html' },
       { label: 'Mapa de clientes', href: '/clientes.html' },
-      { label: 'Términos de uso', href: '/terminos-de-uso.html' },
-      { label: 'Política de privacidad', href: '/politica-de-privacidad.html' },
     ],
   },
   {
@@ -30,6 +28,11 @@ const COLUMNS = [
       { label: 'Instagram', href: SITE.instagram, external: true },
     ],
   },
+]
+
+const LEGAL = [
+  { label: 'Política de privacidad', href: '/politica-de-privacidad.html' },
+  { label: 'Términos de uso', href: '/terminos-de-uso.html' },
 ]
 
 export default function Footer() {
@@ -85,6 +88,21 @@ export default function Footer() {
             </a>
           </p>
         </div>
+
+        <nav
+          aria-label="Legal"
+          className="mt-6 flex flex-wrap justify-center gap-x-10 border-t border-paper/20 pt-2 sm:gap-x-16"
+        >
+          {LEGAL.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="inline-flex min-h-[44px] items-center text-[15px] text-mist transition-colors duration-300 ease-out hover:text-paper"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </footer>
   )

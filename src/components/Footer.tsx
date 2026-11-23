@@ -16,6 +16,10 @@ const COLUMNS = [
     links: [
       { label: 'Precios', href: SITE.plans, external: true },
       { label: 'Descargas', href: SITE.downloads, external: true },
+      { label: 'Nuestra historia', href: '/historia.html' },
+      { label: 'Mapa de clientes', href: '/clientes.html' },
+      { label: 'Términos de uso', href: '/terminos-de-uso.html' },
+      { label: 'Política de privacidad', href: '/politica-de-privacidad.html' },
     ],
   },
   {

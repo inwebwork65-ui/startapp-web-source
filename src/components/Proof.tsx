@@ -10,7 +10,7 @@ export default function Proof() {
         />
         <Reveal delay={0.1} className="mt-12 grid lg:grid-cols-12">
           <p className="max-w-md border-t border-paper/20 pt-5 text-body text-mist lg:col-span-4 lg:col-start-9">
-            Desde Posadas, Misiones, para empresas de toda la Argentina y de Latinoamérica.
+            Desde Posadas, Misiones, para empresas de Argentina, Latinoamérica y España.
           </p>
         </Reveal>
       </div>

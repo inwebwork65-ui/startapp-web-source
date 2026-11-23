@@ -27,6 +27,7 @@ export const NAV: NavItem[] = [
   { id: 'soluciones', label: 'Soluciones', href: '#soluciones' },
   { id: 'proyectos', label: 'Proyectos', href: '#proyectos' },
   { id: 'equipo', label: 'Equipo', href: '#equipo' },
+  { id: 'historia', label: 'Historia', href: '/historia.html' },
   { id: 'precios', label: 'Precios', href: SITE.plans, external: true },
   { id: 'descargas', label: 'Descargas', href: SITE.downloads, external: true },
   { id: 'contacto', label: 'Contacto', href: '#contacto' },

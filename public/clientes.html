@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="/images/logo-small.png">
+<meta name="description" content="Desde Posadas, Misiones, a 10 países: dónde están las empresas que usan software de StartApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="StartApp">
+<meta property="og:title" content="Clientes de StartApp en 10 países">
+<meta property="og:description" content="Desde Posadas, Misiones, a 10 países: dónde están las empresas que usan software de StartApp.">
+<meta property="og:url" content="https://www.startapp.ar/clientes.html">
+<meta property="og:image" content="https://www.startapp.ar/historia-img/mapa_clientes.jpg">
+<link rel="canonical" href="https://www.startapp.ar/clientes.html">
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Clientes de StartApp en 10 países</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;800;900&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: el mapa ocupa el centro de la escena; a la izquierda el número grande y la lista de países, como en la web de la historia */
+:root {
+  --ink: #0A0A0A; --ink-2: #161614; --bone: #F5F5F2; --muted: #A8A8A3; --dim: #6B6B66;
+  --orange: #F2542D; --line: rgba(245,245,242,.14);
+  --land: #1E1E1C; --land-edge: #34342F; --sea: #0A0A0A;
+  --font: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ink); color: var(--bone); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: clamp(32px, 6vw, 72px); display: flex; flex-direction: column; gap: 32px; }
+.tag { display: inline-flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
+.tag::before { content: ""; width: 8px; height: 8px; background: var(--orange); }
+h1 { margin: 0; font-size: clamp(40px, 7vw, 88px); font-weight: 900; letter-spacing: -.05em; line-height: .92; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--orange); }
+.lead { margin: 0; max-width: 60ch; color: var(--muted); font-size: clamp(17px, 1.8vw, 20px); }
+
+.scene { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 860px) { .scene { grid-template-columns: 1fr; } }
+
+.side { display: flex; flex-direction: column; gap: 24px; }
+.big { display: flex; flex-direction: column; gap: 4px; }
+.big b { font-size: clamp(64px, 9vw, 110px); font-weight: 900; letter-spacing: -.06em; line-height: .85; color: var(--orange); font-variant-numeric: tabular-nums; }
+.big span { color: var(--muted); }
+.countries { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.countries li { border-bottom: 1px solid var(--line); }
+.countries button { all: unset; box-sizing: border-box; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 2px; cursor: pointer; }
+.countries button:hover .name, .countries button:focus-visible .name, .countries button[aria-pressed="true"] .name { color: var(--orange); }
+.countries button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.countries .name { font-weight: 600; }
+.countries .reg { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+
+.mapbox { position: relative; border: 1px solid var(--line); background: var(--sea); min-width: 0; }
+.mapbox svg { display: block; width: 100%; height: auto; }
+.controls { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+.controls button { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; background: rgba(10,10,10,.8); color: var(--bone); border: 1px solid var(--line); padding: 7px 12px; cursor: pointer; }
+.controls button[aria-pressed="true"] { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+.controls button:focus-visible { outline: 2px solid var(--bone); outline-offset: 2px; }
+.legend { position: absolute; bottom: 12px; left: 12px; display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: rgba(10,10,10,.75); padding: 6px 10px; }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; background: var(--orange); }
+.legend i.hq { background: var(--bone); box-shadow: 0 0 0 3px var(--orange); }
+
+.land { fill: var(--land); stroke: var(--land-edge); stroke-width: .6; vector-effect: non-scaling-stroke; }
+.land.has { fill: #2A2622; }
+.dot { fill: var(--orange); stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.halo { fill: var(--orange); opacity: .18; }
+.hq { fill: var(--bone); stroke: var(--orange); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.label { font-family: var(--mono); font-size: 11px; fill: var(--bone); paint-order: stroke; stroke: var(--ink); stroke-width: 3px; letter-spacing: .04em; pointer-events: none; }
+.arc { fill: none; stroke: var(--orange); stroke-width: 1; opacity: .35; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+@media (prefers-reduced-motion: no-preference) {
+  .dot, .halo { animation: pop .5s ease-out both; animation-delay: calc(var(--i) * 18ms); transform-box: fill-box; transform-origin: center; }
+  @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+}
+.note { font-size: 14px; color: var(--dim); max-width: 75ch; }
+.note b { color: var(--muted); font-weight: 600; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:16px">
+    <a href="/" aria-label="Ir a startapp.ar"><img src="/images/logo-small.png" alt="StartApp" style="height:34px;width:auto;display:block"></a>
+    <span class="tag">Dónde están nuestros clientes</span>
+    <h1>Desde Posadas,<br>a <em>10 países</em>.</h1>
+    <p class="lead">Distribuidoras y empresas que usan software de StartApp todos los días, de Ushuaia a México y del otro lado del océano, en España.</p>
+  </header>
+
+  <div class="scene">
+    <aside class="side">
+      <div class="big"><b id="nPaises">10</b><span>países con clientes</span></div>
+      <ul class="countries" id="countryList" aria-label="Países"></ul>
+    </aside>
+
+    <div class="mapbox">
+      <svg id="map" viewBox="0 0 960 720" role="img" aria-label="Mapa con la ubicación aproximada de los clientes de StartApp"></svg>
+      <div class="controls" role="group" aria-label="Vista del mapa">
+        <button type="button" data-view="mundo" aria-pressed="true">Mundo</button>
+        <button type="button" data-view="america">América</button>
+        <button type="button" data-view="argentina">Argentina</button>
+      </div>
+      <div class="legend"><span><i class="hq"></i>Posadas · casa central</span><span><i></i>Clientes</span></div>
+    </div>
+  </div>
+
+  <p class="note">Las ubicaciones son aproximadas. <a href="/historia.html" style="color:var(--orange)">Conocé nuestra historia</a> · <a href="/" style="color:var(--orange)">Volver a startapp.ar</a></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+// Ubicaciones aproximadas tomadas de las capturas del mapa de clientes. [lat, lon, lugar, país]
+const PUNTOS = [
+  [36.72, -4.42, "Málaga", "España"],
+  [19.43, -99.13, "Ciudad de México", "México"],
+  [8.98, -79.52, "Panamá", "Panamá"],
+  [4.61, -74.08, "Bogotá", "Colombia"],
+  [-2.17, -79.92, "Guayaquil", "Ecuador"],
+  [-25.30, -57.63, "Asunción", "Paraguay"],
+  [-17.78, -63.18, "Santa Cruz de la Sierra", "Bolivia"],
+  [-34.90, -56.16, "Montevideo", "Uruguay"],
+  [-33.05, -71.60, "Valparaíso", "Chile"],
+  [-33.45, -70.66, "Santiago", "Chile"],
+  [-40.57, -73.13, "Osorno", "Chile"],
+  [-41.10, -72.95, "Puerto Varas", "Chile"],
+  // Argentina · NEA
+  [-27.37, -55.90, "Posadas", "Argentina"], [-27.48, -55.12, "Oberá", "Argentina"], [-26.40, -54.62, "Eldorado", "Argentina"],
+  [-25.60, -54.57, "Puerto Iguazú", "Argentina"], [-27.92, -55.75, "Apóstoles", "Argentina"], [-26.85, -55.00, "Jardín América", "Argentina"],
+  [-27.47, -58.83, "Corrientes", "Argentina"], [-28.15, -55.65, "Santo Tomé", "Argentina"], [-29.15, -59.65, "Reconquista", "Argentina"],
+  [-26.18, -58.17, "Formosa", "Argentina"],
+  // NOA
+  [-22.52, -63.80, "Tartagal", "Argentina"], [-24.18, -65.30, "San Salvador de Jujuy", "Argentina"], [-24.78, -65.41, "Salta", "Argentina"],
+  [-24.40, -65.20, "Palpalá", "Argentina"], [-26.82, -65.22, "Tucumán", "Argentina"], [-28.47, -65.78, "Catamarca", "Argentina"],
+  // Centro
+  [-31.42, -64.18, "Córdoba", "Argentina"], [-32.41, -63.24, "Villa María", "Argentina"], [-33.12, -64.35, "Río Cuarto", "Argentina"],
+  [-31.63, -60.70, "Santa Fe", "Argentina"], [-31.73, -60.52, "Paraná", "Argentina"], [-32.95, -60.65, "Rosario", "Argentina"],
+  [-33.89, -60.57, "Pergamino", "Argentina"], [-34.59, -60.95, "Junín", "Argentina"], [-33.33, -60.22, "San Nicolás", "Argentina"],
+  [-35.66, -63.76, "General Pico", "Argentina"], [-36.62, -64.29, "Santa Rosa", "Argentina"],
+  // Cuyo
+  [-31.54, -68.53, "San Juan", "Argentina"], [-32.89, -68.83, "Mendoza", "Argentina"], [-33.30, -66.34, "San Luis", "Argentina"],
+  // Buenos Aires
+  [-34.60, -58.38, "CABA", "Argentina"], [-34.70, -58.45, "Conurbano sur", "Argentina"], [-34.50, -58.55, "Conurbano norte", "Argentina"],
+  [-34.65, -58.70, "Conurbano oeste", "Argentina"], [-34.92, -57.95, "La Plata", "Argentina"], [-34.45, -58.92, "Pilar", "Argentina"],
+  [-35.00, -58.25, "Florencio Varela", "Argentina"], [-37.32, -59.13, "Tandil", "Argentina"], [-36.89, -60.32, "Olavarría", "Argentina"],
+  [-38.00, -57.55, "Mar del Plata", "Argentina"], [-37.26, -56.97, "Villa Gesell", "Argentina"], [-35.58, -58.02, "Chascomús", "Argentina"],
+  // Patagonia
+  [-38.95, -68.06, "Neuquén", "Argentina"], [-38.90, -68.70, "Plottier", "Argentina"], [-39.03, -67.58, "General Roca", "Argentina"],
+  [-41.13, -71.31, "Bariloche", "Argentina"], [-42.91, -71.32, "Esquel", "Argentina"], [-45.86, -67.48, "Comodoro Rivadavia", "Argentina"],
+  [-51.62, -69.22, "Río Gallegos", "Argentina"], [-53.79, -67.71, "Río Grande", "Argentina"],
+];
+const HQ = [-27.37, -55.90];
+const REGION = { "Argentina": "Casa", "Chile": "Sudamérica", "Uruguay": "Sudamérica", "Paraguay": "Sudamérica", "Bolivia": "Sudamérica", "Ecuador": "Sudamérica", "Colombia": "Sudamérica", "Panamá": "Centroamérica", "México": "Norteamérica", "España": "Europa" };
+const ISO = { "Argentina": "032", "Chile": "152", "Uruguay": "858", "Paraguay": "600", "Bolivia": "068", "Ecuador": "218", "Colombia": "170", "Panamá": "591", "México": "484", "España": "724" };
+const ORDER = ["Argentina", "Chile", "Uruguay", "Paraguay", "Bolivia", "Ecuador", "Colombia", "Panamá", "México", "España"];
+
+const VIEWS = {
+  mundo:     { lon: [-115, 10], lat: [-56, 44] },
+  america:   { lon: [-105, -40], lat: [-56, 24] },
+  argentina: { lon: [-76, -52], lat: [-55.5, -21.5] },
+};
+
+const svg = d3.select("#map");
+const W = 960, H = 720;
+const gLand = svg.append("g"), gArcs = svg.append("g"), gDots = svg.append("g"), gLabels = svg.append("g");
+let projection = d3.geoMercator(), path = d3.geoPath(projection), world;
+
+function bbox(v) {
+  return { type: "MultiPoint", coordinates: [[v.lon[0], v.lat[0]], [v.lon[1], v.lat[0]], [v.lon[1], v.lat[1]], [v.lon[0], v.lat[1]]] };
+}
+
+function render(viewName, focusCountry) {
+  const v = VIEWS[viewName];
+  projection = d3.geoMercator().fitExtent([[20, 60], [W - 20, H - 50]], bbox(v));
+  path = d3.geoPath(projection);
+  const has = new Set(ORDER.map(c => ISO[c]));
+  gLand.selectAll("path").data(world).join("path")
+    .attr("class", d => "land" + (has.has(String(d.id).padStart(3, "0")) ? " has" : ""))
+    .attr("d", path);
+
+  // Arcos desde Posadas a cada país fuera de Argentina
+  const remote = ORDER.filter(c => c !== "Argentina").map(c => PUNTOS.find(p => p[3] === c));
+  gArcs.selectAll("path").data(viewName === "argentina" ? [] : remote).join("path")
+    .attr("class", "arc")
+    .attr("d", p => path({ type: "LineString", coordinates: [[HQ[1], HQ[0]], [p[1], p[0]]] }));
+
+  const r = viewName === "argentina" ? 6 : viewName === "america" ? 5 : 4.5;
+  const pts = PUNTOS.map((p, i) => ({ p, i, xy: projection([p[1], p[0]]) }))
+    .filter(d => d.xy[0] > 0 && d.xy[0] < W && d.xy[1] > 0 && d.xy[1] < H);
+  gDots.selectAll("g").data(pts, d => d.i).join(
+    enter => { const g = enter.append("g"); g.append("circle").attr("class", "halo"); g.append("circle").attr("class", "dot"); return g; }
+  ).each(function (d) {
+    const g = d3.select(this);
+    const dim = focusCountry && d.p[3] !== focusCountry;
+    g.style("--i", d.i).attr("opacity", dim ? .25 : 1);
+    g.select(".halo").attr("cx", d.xy[0]).attr("cy", d.xy[1]).attr("r", r * 2.6);
+    g.select(".dot").attr("cx", d.xy[0]).attr("cy", d.xy[1]).attr("r", r);
+    g.selectAll("title").remove();
+    g.append("title").text(d.p[2] + " · " + d.p[3]);
+  });
+  const hq = projection([HQ[1], HQ[0]]);
+  gDots.selectAll("circle.hq").data([hq]).join("circle").attr("class", "hq").attr("cx", hq[0]).attr("cy", hq[1]).attr("r", r + 3).raise();
+
+  // Etiquetas: países lejanos en mundo/américa, ciudades clave en Argentina
+  const labels = viewName === "argentina"
+    ? [["Posadas", HQ], ["Buenos Aires", [-34.6, -58.4]], ["Córdoba", [-31.42, -64.18]], ["Neuquén", [-38.95, -68.06]], ["Salta", [-24.78, -65.41]], ["Río Grande", [-53.79, -67.71]], ["Mendoza", [-32.89, -68.83]]]
+    : remote.filter(p => viewName === "america" || !["Chile", "Uruguay", "Paraguay", "Bolivia"].includes(p[3])).map(p => [p[3], [p[0], p[1]]]).concat(viewName === "mundo" ? [["Argentina", [-36, -64]]] : [["Posadas", HQ]]);
+  gLabels.selectAll("text").data(labels).join("text").attr("class", "label")
+    .attr("x", d => projection([d[1][1], d[1][0]])[0] + r + 6)
+    .attr("y", d => projection([d[1][1], d[1][0]])[1] + 4)
+    .text(d => d[0]);
+}
+
+function viewFor(country) {
+  if (!country) return null;
+  if (country === "Argentina") return "argentina";
+  if (country === "España") return "mundo";
+  return "america";
+}
+
+let current = "mundo", focus = null;
+document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", () => {
+  current = b.dataset.view; focus = null; sync(); render(current, focus);
+}));
+function sync() {
+  document.querySelectorAll(".controls button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === current)));
+  document.querySelectorAll(".countries button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.country === focus)));
+}
+
+const list = document.getElementById("countryList");
+ORDER.forEach(c => {
+  const li = document.createElement("li");
+  li.innerHTML = `<button type="button" data-country="${c}" aria-pressed="false"><span class="name">${c}</span><span class="reg">${REGION[c]}</span></button>`;
+  li.querySelector("button").addEventListener("click", () => {
+    focus = focus === c ? null : c;
+    current = focus ? viewFor(c) : current;
+    sync(); render(current, focus);
+  });
+  list.appendChild(li);
+});
+
+fetch("/clientes-data/countries-50m.json").then(r => r.json()).then(topo => {
+  world = topojson.feature(topo, topo.objects.countries).features;
+  render(current, focus);
+}).catch(() => {
+  document.querySelector(".mapbox").insertAdjacentHTML("beforeend", '<p style="position:absolute;inset:auto 12px 48px 12px;color:var(--muted)">No se pudo cargar el mapa. Recargá la página.</p>');
+});
+</script>
+
+</body>
+</html>

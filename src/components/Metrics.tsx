@@ -52,12 +52,12 @@ export default function Metrics() {
           <li className="border-y border-paper/20">
             <Reveal className="grid items-end gap-x-6 gap-y-4 py-8 lg:grid-cols-12 lg:py-14">
               <p className="text-[clamp(2.75rem,8.6vw,9.5rem)] font-medium leading-[0.9] tracking-[-0.04em] lg:col-span-8">
-                ARG + LATAM
+                ARG + LATAM + ESPAÑA
               </p>
               <div className="lg:col-span-4 lg:pb-3">
                 <p className="text-title">Alcance</p>
                 <p className="mt-2 max-w-sm text-body text-mist">
-                  Clientes en Argentina y en otros países de Latinoamérica.
+                  Clientes en Argentina, Latinoamérica y España.
                 </p>
               </div>
             </Reveal>
